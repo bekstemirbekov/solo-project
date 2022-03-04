@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "title": "ew",
+      "model": "Спорт",
+      "image": "we",
+      "price": null,
+      "type": "Хэтчбек",
+      "description": "wewr",
+      "id": 1
+    },
+    {
+      "title": "ewr",
+      "model": "Средний",
+      "image": "https://avatars.mds.yandex.net/i?id=94499ce916aaac7cacfeb4523954994c-4272095-images-thumbs&n=13",
+      "price": "12000",
+      "type": "Кроссовер",
+      "description": "Bmw is really strong car in the worl and best in sport cars",
+      "id": 2
+    },
+    {
+      "title": "asadfd",
+      "model": "Средний",
+      "image": "sdfg",
+      "price": null,
+      "type": "Кроссовер",
+      "description": "sdf",
+      "id": 5
+    }
+  ]
+}
