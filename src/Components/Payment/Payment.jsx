@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-credit-cards";
+import './Payment.css'
 
 
 
@@ -69,17 +70,6 @@ export default class App extends React.Component {
     return (
       <div key="Payment">
         <div className="App-payment">
-            {/* <Accordion> <AccordionSummary 
-            expandIcon={<ExpandMoreIcon />} 
-            aria-controls="panel1a-content" 
-            id="panel1a-header" 
-            ><AccordionSummary/>
-            <h4 >Оплату можно воспроизвести при помощи кредитной карты VISA</h4>
-          <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ducimus error quo ex dignissimos, voluptas quaerat ipsum deserunt alias porro blanditiis, corporis accusamus tempore. Ratione aliquam doloremque vel commodi! Dolores, quasi deleniti eligendi possimus reiciendis, veniam beatae ea nihil aperiam ullam voluptas numquam illo rerum magnam velit sit modi quam unde asperiores sint soluta molestias maiores quos! Illo eveniet officia, distinctio maxime optio possimus aut eius sunt quia excepturi nostrum maiores nulla porro amet doloribus tenetur nemo laudantium corporis beatae? Veniam, deserunt? Esse, aliquid qui beatae reprehenderit, incidunt minus corporis eaque doloribus, veritatis sint consequuntur voluptates quisquam? Possimus, quas sint?</h6>
-            </Accordion> */}
-           
-
-           
           <Card
             number={number}
             name={name}
@@ -93,19 +83,25 @@ export default class App extends React.Component {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              paddingTop: '30px'
+              paddingTop: '15px'
           }}>
             <div className="form-group">
               <input style={{width: '17rem', 
                 display: 'flex',
                 alignItems: 'center',
-                paddingTop: '15px',
+                padding: '10px ',
                 marginTop: '5px',
-                borderRadius: '5px'}}
+                color: 'white',
+                border: '2px solid #29d9d5',
+                borderRadius: '.5rem',
+                cursor: 'pointer',
+                background: '#222222',
+                textAlign: 'center'
+                }}
                 type="tel"
                 name="number"
                 className="form-control"
-                placeholder="Номер карты"
+                placeholder="Card number"
                 pattern="[\d| ]{16,22}"
                 required
                 onChange={this.handleInputChange}
@@ -116,13 +112,19 @@ export default class App extends React.Component {
               <input style={{width: '17rem', 
                 display: 'flex',
                 alignItems: 'center',
-                paddingTop: '15px',
+                padding: '10px ',
                 marginTop: '5px',
-                borderRadius: '5px'}}
+                color: 'white',
+                border: '2px solid #29d9d5',
+                borderRadius: '.5rem',
+                cursor: 'pointer',
+                background: '#222222',
+                textAlign: 'center'
+                }}
                 type="text"
                 name="name"
                 className="form-control"
-                placeholder="Имя пользователя"
+                placeholder="Name of holder"
                 required
                 onChange={this.handleInputChange}
                 onFocus={this.handleInputFocus}
@@ -131,12 +133,18 @@ export default class App extends React.Component {
             <div className="row" >
               <div className="col-6" >
                 <input
-                style={{width: '17rem', 
+                style={{width: '8rem', 
                 display: 'flex',
-                alignItems: 'center',
-                paddingTop: '15px',
                 marginTop: '5px',
-                borderRadius: '5px'}}
+                alignItems: 'center',
+                padding: '8px ',
+                color: 'white',
+                border: '2px solid #29d9d5',
+                borderRadius: '.5rem',
+                cursor: 'pointer',
+                background: '#222222',
+                textAlign: 'center'
+                }}
                   type="tel"
                   name="expiry"
                   className="form-control"
@@ -149,12 +157,19 @@ export default class App extends React.Component {
                 
               </div>
                 <input
-               style={{width: '17rem', 
+               style={{width: '6rem', 
                 display: 'flex',
-                alignItems: 'center',
-                paddingTop: '15px',
                 marginTop: '5px',
-                borderRadius: '5px'}}
+                marginLeft:'15px',
+                alignItems: 'center',
+                padding: '8px',
+                color: 'white',
+                border: '2px solid #29d9d5',
+                borderRadius: '.5rem',
+                cursor: 'pointer',
+                background: '#222222',
+                textAlign: 'center'
+              }}
                type="tel"
                name="cvc"
                className="form-control"
@@ -168,15 +183,20 @@ export default class App extends React.Component {
             <input type="hidden" name="issuer" value={issuer} />
             <div className="form-actions">
               <Link to='/' style={{textDecoration: 'none'}}>
-              <button style={{width: '10rem', 
-                justifyContent: 'center',
+              <button style={{
                 display: 'flex',
-                padding: '10px',
-                borderRadius: '25px',
-                backgroundColor: 'black',
+                justifyContent: 'center',
+                margin: '1rem 0',
+                display: 'inline-block',
+                padding: '.5rem 3rem',
+                fontSize: '1rem',
                 color: 'white',
-                border: 'none',
-                marginTop: '5px'}}>Оплатить</button>
+                border: '0.2rem solid #29d9d5',
+                borderRadius: '5rem',
+                cursor: 'pointer',
+                background: '#222222',
+                textAlign: 'center'
+              }}>get pay</button>
               </Link>
             </div>
           </form>

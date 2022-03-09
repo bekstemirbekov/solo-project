@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import car from '../images/drive.mp4';
 import nature from '../images/nature.mp4'
 import vidos from '../images/main.vid.mp4'
@@ -19,9 +19,31 @@ import y from '../images/y.jpg'
 import u from '../images/u.jpg'
 import w from '../images/w.jpg'
 import p from '../images/p.jpg'
-const Main = () => {
+
+import { productContext } from '../Contexts/ProductContext';
+import Stream from '../Components/Comments/Stream';
+export default function Main() {
+    const [values, setValues] = useState({
+        text: '',
+        date: '',
+        number: ''
+    })
+
+    const {addBook} = useContext(productContext)
+
+    const handleInpBook = (e) => {
+        let obj = {
+            ...values,
+            [e.target.name]: e.target.value
+        }
+        setValues(obj)
+    }
+
+    const handleSaveBook = () => {
+        addBook({...values })
+    }
     return (
-        <div>
+        <div className='body'>
             <section className='home'>
                 <div className="content">
                     <span>Follow us</span>
@@ -34,19 +56,20 @@ const Main = () => {
 
             <section className='book-form' id='book-form'>
                 <form action="">
-                    <div className="inputBox">
+                    <div className="inputBox" onChange={handleInpBook} value={values.placename} >
                         <span>where to</span>
-                        <input type="text" placeholder='place name' value='' />
+                        <input type="text" name="text" placeholder='place name'  />
+      
                     </div>
-                    <div className="inputBox">
-                        <span>when?</span>
-                        <input type="date" value='' />
+                    <div className="inputBox" onChange={handleInpBook} value={values.date}>
+                        <span>when?</span> 
+                        <input type="date" name="date"  />
                     </div>
-                    <div className="inputBox">
+                    <div className="inputBox" onChange={handleInpBook} value={values.number}>
                         <span>how many?</span>
-                        <input type="text" placeholder='number of travelers' value='' />
+                        <input type="number" name="number" placeholder='number of travelers'  />
                     </div>
-                    <input type="submit" value='find now' className='btn' />
+                    <input type="submit"   onClick={handleSaveBook} className='btn'  />
                 </form>
             </section>
             <section className='about' id='about'>
@@ -245,24 +268,16 @@ const Main = () => {
             </section>
             <section className="blogs" id="blogs">
                 <div className="heading">
-                    <span>blogs & posts</span>
-                    <h1>we untold stories</h1>
+                    <span>feedback's & reviews </span>
+                    <h1>write something about our activities</h1>
                 </div>
-
-                <div className="box-container">
-                    <div className="image">
-                        <img src="" alt="" />
-                    </div>
-                    <a href="#" className='link'>life a journey, nit a destination</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, dicta?</p>
-                    <div className="icon">
-                        <a href="#" className=''>21st may, 2021</a>
-                        <a href="#" className=''>by admin</a>
-                    </div>
+            </section>
+            <section>
+                <div>
+                <Stream/>
                 </div>
             </section>
         </div>
     );
 };
 
-export default Main;

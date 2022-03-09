@@ -1,14 +1,28 @@
-import { Card, CardContent, CardMedia, Grid, IconButton, Paper, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Grid, IconButton, Link, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import * as React from 'react';
 import { productContext } from '../../../Contexts/ProductContext';
 import ClearIcon from '@mui/icons-material/Clear';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 export default function Star({item}) {
-    const {star, getStar, deleteProductInStar} = React.useContext(productContext)
+    const {star,getStar,  deleteProductInStar, addToCart, chekProductInCart} = React.useContext(productContext)
     React.useEffect(() => {
       getStar()
     }, [])
+
+    let icons = (
+      <CardActions disableSpacing>
+              <IconButton style={{color: '#29d9d5'}} onClick={() => {
+                addToCart(item) 
+                }        
+            }
+             >
+                 <ShoppingCartCheckoutIcon />
+            </IconButton> 
+          
+      </CardActions>
+    )
  
   return (
     <div>
@@ -54,15 +68,18 @@ export default function Star({item}) {
                 </Typography>
                 <IconButton onClick={() => deleteProductInStar(elem.item.id)} >
                   <ClearIcon/>
-                </IconButton>      
+                  {icons}
+                </IconButton>
+                
             </CardContent>
-            {/* {icons} */}
+            
             </Card>
             </Grid>
             ))}
           </>
         ) : (null)}
         </Grid>
+        
         </Paper>
       </Box>
     </div>

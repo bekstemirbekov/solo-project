@@ -3,17 +3,16 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton, Paper } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
-import { ShoppingCart } from '@mui/icons-material';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { productContext } from '../../../Contexts/ProductContext';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 
 export default function ProductCard({item}) {
     const {deleteProduct, addToCart, chekProductInCart, useAuth, addToStar, chekProductInStar} = React.useContext(productContext)
@@ -24,7 +23,7 @@ export default function ProductCard({item}) {
             
               {currentUser?.email === 'admin@gmail.com' ? (
                    <Link to={`edit/${item.id}`}>
-                   <IconButton>
+                   <IconButton style={{color: '#29d9d5'}}>
                        <EditIcon/>
                    </IconButton>
                </Link>
@@ -33,32 +32,32 @@ export default function ProductCard({item}) {
               }
            
             {currentUser?.email === 'admin@gmail.com' ? (
-              <IconButton onClick={() => deleteProduct(item.id)}>
+              <IconButton style={{color: '#29d9d5'}} onClick={() => deleteProduct(item.id)}>
                 <DeleteIcon/>
               </IconButton>
               ): null
               
             }
             
-               <IconButton onClick={() => {
+               <IconButton style={{color: '#29d9d5'}} onClick={() => {
                 addToCart(item) 
                 }        
             }
             color = {chekProductInCart(item.id) ? 'secondary': 'inherit'}
              >
-                       <ShoppingCart />
+                       <AddShoppingCartIcon/>
             </IconButton>
-               <IconButton onClick={() => {
+               <IconButton style={{color: '#29d9d5'}} onClick={() => {
                 addToStar(item) 
                 }        
             }
             color = {chekProductInStar(item.id) ? 'secondary': 'inherit'}
              >
-                       <FavoriteIcon/>
+                       <BookmarkIcon/>
             </IconButton>
            
             <Link to={`/detail/${item.id}`} >
-            <IconButton>
+            <IconButton style={{color: '#29d9d5'}}>
              <MoreHorizIcon/>
            </IconButton>
             </Link>
@@ -71,7 +70,7 @@ export default function ProductCard({item}) {
   return (
     
 
-        <Card sx={{  width: '100%' }} >
+        <Card sx={{  width: '100%',  background: '#222222' }} >
       <CardMedia
         component="img"
         width='100%'
@@ -81,7 +80,9 @@ export default function ProductCard({item}) {
       />
   
       <CardContent>
-        <Typography gutterBottom variant="h5" >
+        <Typography style={{
+          color: 'white'
+        }} gutterBottom variant="h5" >
           {item.title}
         </Typography>
       </CardContent>
@@ -89,14 +90,19 @@ export default function ProductCard({item}) {
     
 
       <CardContent>
-          <Typography variant='body1'>
-              Cтоимость:{item.price}
+          <Typography style={{
+          color: 'white'
+        }} variant='body1'>
+              Price:{item.price} $
           </Typography>
-          <Typography variant='body2'>
-              Класс: {item.model}
+          <Typography style={{
+          color: 'white'
+        }} variant='body2'>
           </Typography>
-          <Typography variant='body2'>
-              Тип: {item.type}
+          <Typography style={{
+          color: 'white'
+        }} variant='body2'>
+              Type of Product: {item.type}
           </Typography>
      
       </CardContent>

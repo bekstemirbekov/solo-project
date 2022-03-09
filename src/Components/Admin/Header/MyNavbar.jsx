@@ -15,11 +15,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
-import mago from '../../../images/hiking-logo.jpg'
+import mago from '../../../images/iki.jpeg'
 import { productContext } from '../../../Contexts/ProductContext';
 
 
@@ -142,16 +142,16 @@ export default function MyNavbar() {
     >
       
           <Link style={{textDecoration: 'none'}} to={!currentUser ?'/login' : '#'}>
-          <MenuItem disabled={currentUser ? true : false} onClick={handleMenuClose}>Войти</MenuItem>
+          <MenuItem disabled={currentUser ? true : false} onClick={handleMenuClose}>Sign in</MenuItem>
           </Link>
       
      
       <Link style={{textDecoration: 'none'}} to={!currentUser ?'/register' : '#'}>
-      <MenuItem disabled={currentUser ? true : false} onClick={handleMenuClose}>Зарегистрироваться</MenuItem>
+      <MenuItem disabled={currentUser ? true : false} onClick={handleMenuClose}>Sign up</MenuItem>
       </Link>
       {
             currentUser ? (
-              <Button variant='success' disabled={!currentUser} onClick={handleLogout} >Выйти</Button>
+              <Button variant='success' disabled={!currentUser} onClick={handleLogout} >go out</Button>
             ) : null
           }
     </Menu>
@@ -177,16 +177,16 @@ export default function MyNavbar() {
 
         <Link to='/cart' style={{color: 'red'}}>
             <IconButton color='inherit'>
-                <Badge badgeContent={cartLength} color="secondary">
-                    <ShoppingCartIcon/>
+                <Badge badgeContent={cartLength} style={{color: '#29d9d5'}}>
+                    <AddShoppingCartIcon/>
                 </Badge>
             </IconButton>
         </Link>
 
         <Link to='/star' style={{color: 'red'}}>
             <IconButton color='inherit'>
-                <Badge badgeContent={starLength} color="secondary">
-                    <FavoriteIcon/>
+                <Badge badgeContent={starLength} style={{color: '#29d9d5'}}>
+                    <BookmarkIcon/>
                 </Badge>
             </IconButton>
         </Link>
@@ -238,11 +238,48 @@ export default function MyNavbar() {
               onChange={handleValue}
             />
           </Search>
+          <Link to='/main' style={{textDecoration: 'none'}}>
+          <Button
+            style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '1rem 0',
+            display: 'inline-block',
+            padding: '.2rem 1.5rem',
+            fontSize: '.7rem',
+            color: 'white',
+            border: '0.2rem solid #29d9d5',
+            borderRadius: '5rem',
+            cursor: 'pointer',
+            background: '#2222222',
+            textAlign: 'center'
+            
+          }}
+          >
+            Main
+          </Button>
+          </Link>
+          
          
           <Box sx={{ flexGrow: 1 }} />
           {currentUser?.email === 'admin@gmail.com' ? (
             <Link to='/add' style={{textDecoration: 'none'}}>
-              <Button style={{backgroundColor: 'alpha', color: 'white'}}>Добавить</Button>
+              <Button 
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                margin: '1rem 0',
+                display: 'inline-block',
+                padding: '.2rem 1.5rem',
+                fontSize: '.7rem',
+                color: 'white',
+                border: '0.2rem solid #29d9d5',
+                borderRadius: '5rem',
+                cursor: 'pointer',
+                background: '#2222222',
+                textAlign: 'center'
+                
+              }}>Add</Button>
             </Link>
           ): null}
           {currentUser?.email}
@@ -251,7 +288,7 @@ export default function MyNavbar() {
           <Link to='/cart' style={{color: 'white'}}>
               <IconButton>
                 <Badge badgeContent={cartLength} color='secondary'>
-                  <ShoppingCartIcon sx={{color: 'white'}}/>
+                  <AddShoppingCartIcon sx={{color: '#29d9d5'}}/>
                 </Badge>
               </IconButton>
 
@@ -259,7 +296,7 @@ export default function MyNavbar() {
           <Link to='/star' style={{color: 'white'}}>
               <IconButton>
                 <Badge badgeContent={starLength} color='secondary'>
-                  <FavoriteIcon sx={{color: 'red'}}/>
+                  <BookmarkIcon sx={{color: '#29d9d5' }}/>
                 </Badge>
               </IconButton>
 

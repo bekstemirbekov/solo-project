@@ -6,14 +6,19 @@ import React, { createContext, useEffect, useReducer, useState } from 'react';
 
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { auth } from '../Firebase.js';
-import { API } from '../Helpers/Constans.js';
+import { API, API_BOOKES, API_COMMENTS } from '../Helpers/Constans.js';
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrise.js';
+// import { StarRate } from '@mui/icons-material';
+import { getComments } from '../Components/Comments/api.js';
 
 
 export const productContext = createContext()
 const INIT_STATE = {
+    comments: null,
     products: null,
+    books: null,
     edit: null,
+    editStream: null,
     cart: {}, 
     cartLength: 0,
     star: {},
@@ -29,6 +34,7 @@ const INIT_STATE = {
         }
          case 'GET_EDIT_PRODUCT':
          return{...state, edit: action.payload}
+        
          case "CHANGE_CART_COUNT":
              return{...state, cartLength: action.payload}
          case "GET_CART":
@@ -39,6 +45,12 @@ const INIT_STATE = {
         return{...state, starLength: action.payload}
         case "GET_STAR":
             return{...state, star: action.payload}
+            case "GET_COMMENTS":
+                return {...state, comments:action.payload.data}
+            case 'GET_EDIT_COMMENTS':
+                return{...state, editStream: action.payload}
+            case "GET_BOOKES":
+                return{...state, books: action.payload.data}
          default:
              return state
      }
@@ -288,7 +300,7 @@ const ProductsContextProvider = ({children}) => {
             }
             let newStar = star.products.filter(elem => elem.item.id === id)
             // console.log(newCart);
-            return newStar.length = 0 ? true : false
+            return newStar.length > 0 ? true : false
 
         }
 
@@ -341,7 +353,84 @@ const ProductsContextProvider = ({children}) => {
 
         return currentUser
     }
+// ! -------------------------------------------------------------------
+// ! COMMENTS SIDE OF 
+    const createCommentAdd = async (newComment) => {
+        try {
+            const res = await axios.post(API_COMMENTS, newComment)
+            getStream()
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
+    // ! getcooment
+    const getStream = async () => {
+        try {
+            let res = await axios(`${API_COMMENTS}`)
+            let action = {
+                type: 'GET_COMMENTS',
+                payload: res
+            }
+            dispatch(action)
+        } catch (error) {
+            alert(error)
+        }
+    }
+
+ 
+    // ! DELETE 
+    const deleteComment = async (id) => {
+        await axios.delete(`${API_COMMENTS}/${id}`)
+        getStream()
+    }
+
+    // !EDIT 
+    const editComment = async (id) => {
+        try {
+            let res = await axios(`${API_COMMENTS}/${id}`)
+            let action = {
+                type: 'GET_EDIT_COMMENTS',
+                payload: res.data
+            }
+            dispatch(action)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // ! SAVE EDITED coment
+    const saveEditedComment = async (updatedComment) => {
+        try {
+            await axios.patch(`${API_COMMENTS}/${updatedComment.id}`, updatedComment)
+            getStream()
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // !BOOKES
+    const addBook = async (newBook) => {
+        console.log(newBook, 'hello')
+
+        try {
+            await axios.post(API_BOOKES, newBook)
+            getBook()
+        } catch (error) {
+            alert(error)
+        }
+    }
+    const getBook = async () => {
+        try {
+            let res = await axios(`${API_BOOKES}`)
+            let action = {
+                type: 'GET_BOOKES',
+                payload: res
+            }
+            dispatch(action)
+        } catch (error) {
+            alert(error)
+        }
+    }
 
     return (
         <productContext.Provider value={{
@@ -366,14 +455,22 @@ const ProductsContextProvider = ({children}) => {
             getStar,
             chekProductInStar,
             deleteProductInStar,
+            createCommentAdd,
+            getStream,
+            deleteComment,
+            editComment,
+            saveEditedComment,
+            addBook,
             edit: state.edit,
+            editStream: state.editStream,
             products: state.products,
             cartLength: state.cartLength,
             cart: state.cart,
             paginatedPages: state.paginatedPages,
             starLength: state.starLength,
             star: state.star,
-            detail: state.detail
+            detail: state.detail,
+            comments: state.comments
         }}>
             {children}
         </productContext.Provider>

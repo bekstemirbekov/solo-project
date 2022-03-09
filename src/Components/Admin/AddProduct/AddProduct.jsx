@@ -1,15 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductContext';
+import { borderRadius } from '@mui/system';
+
 
 export default function AddProduct() {
     const [values, setValues] = React.useState({
         title: '',
-        model: '',
         image: '',
         price: '',
         type: '',
@@ -29,8 +30,8 @@ export default function AddProduct() {
     }
 
     const handleSave = () => {
-        if(!values.image)values.image = 'https://avatars.mds.yandex.net/i?id=94499ce916aaac7cacfeb4523954994c-4272095-images-thumbs&n=13'
-        addProduct({...values, price: +values.price, type: type, model: model}) 
+        if(!values.image)values.image = 'https://ethno.market/wa-data/public/shop/products/34/28/2834/images/12542/12542.750.jpg'
+        addProduct({...values, price: +values.price, type: type}) 
         navigate('/')
     }
 
@@ -40,11 +41,11 @@ export default function AddProduct() {
         setType(e.target.value);
       };
 
-    const [model, setModel] = React.useState('');
+    // const [model, setModel] = React.useState('');
 
-    const handleModelChange = (e) => {
-      setModel(e.target.value)
-    }
+    // const handleModelChange = (e) => {
+    //   setModel(e.target.value)
+    // }
 
   return (
     <Box
@@ -59,12 +60,12 @@ export default function AddProduct() {
       }}
     >
       <Paper elevation={3} 
-      style={{backgroundColor: 'white'}}
+      style={{backgroundColor: ''}}
       >
-        <h1 style={{textAlign: 'center', width: '100%', backgroundColor: 'black', color: 'white'}}>Добавить авто</h1>
+        <h1 style={{textAlign: 'center', width: '100%', backgroundColor: '#222222', color: '#29d9d5', fontSize: '2rem'}}>Add something for sale</h1>
         <div style={{display: 'flex', justifyContent: 'space-around', color: 'black'}}>
             <div style={{marginLeft: '30px'}} >
-                <img width='400' src={values.image ? values.image : 'https://avatars.mds.yandex.net/i?id=94499ce916aaac7cacfeb4523954994c-4272095-images-thumbs&n=13'} alt='' />
+                <img width='450' src={values.image ? values.image : 'https://avatars.mds.yandex.net/i?id=2a0000017a11bc9edaed99598d76b59a1be5-4032833-images-thumbs&n=13'} alt='' />
             </div>
             <div style={{
                 width: '450px',
@@ -85,34 +86,16 @@ export default function AddProduct() {
                       onChange={handleInp} 
                       value={values.title} 
                       variant='outlined' 
-                      label='Авто
+                      label='Name of product
                       '/>
-                      <FormControl style={{ width: '200px'}}>
-                        <InputLabel id="demo-simple-select-label">Класс</InputLabel>
-                        <Select
-                         style={{padding: '-5px'}} 
-                         name='model'
-                         value={model} 
-                         variant='outlined' 
-                         label='Model'
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        onChange={handleModelChange}
-                        >
-                        <MenuItem value={'Эконом'}>Эконом</MenuItem>
-                        <MenuItem value={'Средний'}>Средний</MenuItem>
-                        <MenuItem value={'Бизнес'}>Бизнес</MenuItem>
-                        <MenuItem value={'Спорт'}>Спорт</MenuItem>
-                        {/* <MenuItem value={'Универсал'}>Универсал</MenuItem> */}
-                        </Select>
-                    </FormControl>
+                     
                     <TextField 
                       style={{padding: '10px'}} 
                       name='image'
                       onChange={handleInp} 
                       value={values.image} 
                       variant='outlined' 
-                      label='Фото
+                      label='Image
                       '/>
                     <TextField 
                       style={{padding: '10px'}} 
@@ -120,10 +103,10 @@ export default function AddProduct() {
                       onChange={handleInp} 
                       value={values.price} 
                       variant='outlined' 
-                      label='Стоимость
+                      label='Price
                       '/>
                      <FormControl style={{ width: '200px'}}>
-                        <InputLabel id="demo-simple-select-label">Тип</InputLabel>
+                        <InputLabel id="demo-simple-select-label">Type of product</InputLabel>
                         <Select
                          style={{padding: '-7px'}} 
                          name='type'
@@ -134,11 +117,12 @@ export default function AddProduct() {
                         id="demo-simple-select"
                         onChange={handleChange}
                         >
-                        <MenuItem value={'Седан'}>Седан</MenuItem>
-                        <MenuItem value={'Кроссовер'}>Кроссовер</MenuItem>
-                        <MenuItem value={'Хэтчбек'}>Хэтчбек</MenuItem>
-                        <MenuItem value={'Купе'}>Купе</MenuItem>
-                        <MenuItem value={'Универсал'}>Универсал</MenuItem>
+                        <MenuItem value={'Snacks'}>Snacks</MenuItem>
+                        <MenuItem value={'Alcohol'}>Alcohol</MenuItem>
+                        <MenuItem value={'T-shirts'}>T-shirts</MenuItem>
+                        <MenuItem value={'Souvenirs'}>Souvenirs</MenuItem>
+                        <MenuItem value={'Carpets'}>Carpets</MenuItem>
+
                         </Select>
                     </FormControl>
                     <TextField 
@@ -147,14 +131,32 @@ export default function AddProduct() {
                       onChange={handleInp} 
                       value={values.description} 
                       variant='outlined' 
-                      label='Подробное описание'/>
+                      label='Description about product'/>
                 </form>
-                <Button style={{backgroundColor: 'black', color: 'white'}} onClick={handleSave} variant='contained' > 
-                    выставить
+                <Button style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  margin: '1rem 0',
+                  display: 'inline-block',
+                  padding: '.5rem 3rem',
+                  fontSize: '1rem',
+                  color: 'white',
+                  border: '0.2rem solid #29d9d5',
+                  borderRadius: '5rem',
+                  cursor: 'pointer',
+                  background: '#222222',
+                  textAlign: 'center'
+                  
+                }} onClick={handleSave} > 
+                    Add to sale
                 </Button>
             </div>
         </div>
       </Paper>
+
     </Box>
   );
 }
+
+
+

@@ -2,9 +2,12 @@ import React, { useContext, useState } from 'react';
 import { styled} from '@mui/material/styles'
 import { useNavigate } from 'react-router';
 
-import { Box, FormControl, FormLabel, Grid, Paper, RadioGroup, Slider, Radio, FormControlLabel } from '@mui/material';
+import { Box, FormControl, FormLabel, Grid, Paper, RadioGroup, Slider, Radio, FormControlLabel, Select } from '@mui/material';
 import { Button, InputGroup} from 'react-bootstrap'
 import { productContext } from '../../../Contexts/ProductContext';
+import DropdownMenu from '@restart/ui/esm/DropdownMenu';
+
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -46,80 +49,110 @@ const Sidebar = () => {
         getProducts()
     }
 
-    return (
-        <Box 
-        sx={{flexGrow: 1}}>
-            <Grid container spacing={1} sx={{ display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
-                <Grid >
-                    <Paper elevation={9}>
-                        <FormControl component='fieldset' >
-                            <RadioGroup 
-                            style={{justifyContent:'center', flexDirection: '-moz-initial'}}
-                            aria-label='gender'
-                            name='gender1'
-                            value={type}
-                            onChange={(e) => handleChangeType('type', e.target.value)} 
-                            >
-                                <FormControlLabel
-                                    value='Купе'
-                                    control={<Radio 
-                                    style={{color: 'black'}}/>}
-                                    label='Купе'
-                                />
-                                <FormControlLabel
-                                   value='Седан'
-                                   control={<Radio 
-                                   style={{color: 'black'}}/>}
-                                   label='Седан'
-                                />
-                                <FormControlLabel
-                                   value='Универсал'
-                                   control={<Radio 
-                                   style={{color: 'black'}}/>}
-                                   label='Универсал'
-                                />
-                                <FormControlLabel
-                                   value='Хэтчбек'
-                                   control={<Radio 
-                                   style={{color: 'black'}}/>}
-                                   label='Хэтчбек'
-                                />
-                                <FormControlLabel
-                                   value='Кроссовер'
-                                   control={<Radio 
-                                   style={{color: 'black'}}/>}
-                                   label='Кроссовер'
-                                />
-                            </RadioGroup>
-                            <input type="number"
-                            style={{ width: '18rem', margin: '10px',justifyContent: 'center', display: 'flex' }}
-                             onChange={(e) => filterProducts('price_lte', e.target.value)}
-                             valueLabelDisplay='auto'
-                             min={0}
-                             max={120000}
-                             step={10000} /> 
-                             <Button
-                        style={{width: '80%', display: 'flex', justifyContent: 'center', margin: 'auto', marginLeft: '35px', marginBottom: '10px' }}
-                       onClick={resetFilter}
-                       variant='dark'
-                       >
-                           Сбросить
-                       </Button>
-                       
-                        </FormControl>
+    return(
+           <Box 
+                sx={{flexGrow: 1 }} marginTop='8rem' marginLeft='7rem' >
+                    <Grid container spacing={15} sx={{ display: 'flex', justifyContent: 'center', paddingTop: '20px'}}>
+                        <Grid >
+                            <Paper elevation={9} >
+                                <FormControl component='fieldset' style={{background: '#222222'}} >
+                                    <RadioGroup 
+                                    style={{justifyContent:'center', flexDirection: '-moz-initial'}}
+                                    row
+                                    aria-labelledby="demo-row-radio-buttons-group-label"
+                                    name="row-radio-buttons-group"
+                                    value={type}
+                                    onChange={(e) => handleChangeType('type', e.target.value)} 
+                                    >
+                                        <FormControlLabel
+                                        style={{
+                                            color: 'white'
+                                        }}
+                                        value='Snacks'
+                                        control={<Radio 
+                                        style={{color: '#29d9d5'}}/>}
+                                        label='Snaks'
+                                        />
+                                        <FormControlLabel
+                                        style={{
+                                            color: 'white'
+                                        }}
+                                        value='Alcohol'
+                                        control={<Radio 
+                                        style={{color: '#29d9d5'}}/>}
+                                        label='Alcohol'
+                                        />
+                                        <FormControlLabel
+                                        style={{
+                                            color: 'white'
+                                        }}
+                                        value='T-shirts'
+                                        control={<Radio 
+                                        style={{color: '#29d9d5'}}/>}
+                                        label='T-shirts'
+                                        />
+                                        <FormControlLabel
+                                        style={{
+                                            color: 'white'
+                                        }}
+                                        value='Souvenirs'
+                                        control={<Radio 
+                                        style={{color: '#29d9d5'}}/>}
+                                        label='Souvenirs'
+                                        />
+                                        <FormControlLabel
+                                        style={{
+                                            color: 'white'
+                                        }}
+                                        value='Carpets'
+                                        control={<Radio 
+                                        style={{color: '#29d9d5'}}/>}
+                                        label='Carpets'
+                                        />
+                                    </RadioGroup>
+                                    <Grid>
+                                    <Slider
+                                    style={{
+                                        width: '80%',
+                                        marginLeft: '3rem',
+                                        margin: '1.5rem',
+                                        color: '#29d9d5'
+                                        
+                                    }}
+                                    onChange={(e) => filterProducts('price_lte', e.target.value)}
+                                    valueLabelDisplay="auto"
+                                    min={5}
+                                    max={2000}
+                                    step={2}
+                                    />
+                                    </Grid>
+                                  
+                                   
+                                    <Button
+                                        style={{width: '60%', display: 'flex', justifyContent: 'center', margin: 'auto', marginLeft: '6rem', marginBottom: '10px' }}
+                                    onClick={resetFilter}
+
+                                    > 
+                                        Reset
+                                    </Button>
+                            
+                                </FormControl>
 
 
-                        <Grid>
-                         
-                        </Grid>
-                       
-                    </Paper>
-                    
+                                <Grid>
+                                
+                                </Grid>
+                            
+                        </Paper>
+                            
+                    </Grid>
+                
                 </Grid>
-        
-            </Grid>
+            </Box>
          
-        </Box>
+
+        
+
          
     );
 };

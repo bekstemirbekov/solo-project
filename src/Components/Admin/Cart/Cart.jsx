@@ -52,12 +52,12 @@ export default function Cart({item}) {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Фото</StyledTableCell>
-            <StyledTableCell align="right">Авто(g)</StyledTableCell>
-            <StyledTableCell align="right">Стоимость(g)</StyledTableCell>
-            <StyledTableCell align="right">Количество(g)</StyledTableCell>
-            <StyledTableCell align="right">Итоговая стоимость(g)</StyledTableCell>
-            <StyledTableCell align="right">Очистить(g)</StyledTableCell>
+            <StyledTableCell>Phot</StyledTableCell>
+            <StyledTableCell align="right">name(g)</StyledTableCell>
+            <StyledTableCell align="right">Price(g)</StyledTableCell>
+            <StyledTableCell align="right">number(g)</StyledTableCell>
+            <StyledTableCell align="right">Total price(g)</StyledTableCell>
+            <StyledTableCell align="right">clean(g)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -97,7 +97,7 @@ export default function Cart({item}) {
               <TableCell rowSpan={3}/>
               <TableCell colSpan={2}>
                     <Typography variant='h4'>
-                        Итоговая стоимость:
+                        Total price:
                     </Typography>                        
               </TableCell>
               {
@@ -113,12 +113,26 @@ export default function Cart({item}) {
           <TableRow>
             <Link to='/pay' style={{textDecoration: 'none'}}>
             <TableCell colSpan={3} align='right'>
-                  <Button variant='contained' style={{backgroundColor: 'black', color: 'white'}}>Купить</Button>
+                  <Button  style={{
+                    padding: ".2rem 2rem",
+                    fontSize: "1rem",
+                    color: "aqua",
+                    border: ".2rem solid aqua",
+                    borderRadius: "5rem",
+                    cursor: "pointer",
+                    background: "black"
+                  }}>Buy</Button>
               </TableCell>
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}> 
                 <TableCell colSpan={3} align='right'>
-                  <Button variant='outlined' style={{backgroundColor: 'black', color: 'white'}}>Главная</Button>
+                  <Button  style={{padding: ".2rem 2rem",
+            fontSize: "1rem",
+            color: "aqua",
+            border: ".2rem solid aqua",
+            borderRadius: "5rem",
+            cursor: "pointer",
+            background: "black"}}>Go back</Button>
                 </TableCell>
             </Link>
 

@@ -12,11 +12,17 @@ import Login from './Components/Auth/Login/Login'
 import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import Cart from './Components/Admin/Cart/Cart';
 import Payment from './Components/Payment/Payment';
-// import Footer from './Components/Footer';
-// import MainPage from './Components/MainPage/MainPage';
+
+
 import ProductsContextProvider from './Contexts/ProductContext';
 import Main from './Main/Main';
 import Star from './Components/Admin/Star/Star';
+import Footer from './Footer/Footer';
+import Stream from './Components/Comments/Stream';
+
+
+
+
 
 
 
@@ -39,15 +45,9 @@ const MyRoutes = () => {
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/pay' element={<Payment/>}/>
                 <Route path='/main' element={<Main/>}/>
-                
-                {/* <Route path='/main' element={<MainPage/>}/> */}
-                
-
-
-
-
+                {/* <Route path='/coment' element={}/> */}
             </Routes>
-            {/* <Footer/> */}
+            <Footer/>
         </BrowserRouter>
         </ProductsContextProvider>
        

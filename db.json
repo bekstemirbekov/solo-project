@@ -1,31 +1,246 @@
 {
   "products": [
     {
-      "title": "ew",
-      "model": "Спорт",
-      "image": "we",
-      "price": null,
-      "type": "Хэтчбек",
-      "description": "wewr",
+      "title": "konyak",
+      "image": "https://avatars.mds.yandex.net/i?id=2fcab564373a27a37e300b47789f78e2-4143030-images-thumbs&n=13",
+      "price": 75,
+      "type": "Alcohol",
+      "description": "Natural konyak from kyrgyzstan. alcohol degree 42%",
       "id": 1
     },
     {
-      "title": "ewr",
-      "model": "Средний",
-      "image": "https://avatars.mds.yandex.net/i?id=94499ce916aaac7cacfeb4523954994c-4272095-images-thumbs&n=13",
-      "price": "12000",
-      "type": "Кроссовер",
-      "description": "Bmw is really strong car in the worl and best in sport cars",
+      "title": "Shyrdak",
+      "image": "https://avatars.mds.yandex.net/i?id=2591066769a7c962c6a6ba1048206c81-4306607-images-thumbs&n=13",
+      "price": 1500,
+      "type": "Carpets",
+      "description": "beatiful handmade carpeys from kyrgyzstan. all natural things used inside",
+      "id": 3
+    },
+    {
+      "title": "Kiyiz",
+      "image": "https://avatars.mds.yandex.net/i?id=4ad2077459f4eea3bf46478af96ed6a2-4491734-images-thumbs&n=13",
+      "price": 1200,
+      "type": "Carpets",
+      "description": "jkdkjdsfjvlkjdfljgl;kgsklkasdf';la'dfj'fgji;oafg",
+      "id": 4
+    },
+    {
+      "title": "carpet",
+      "image": "https://avatars.mds.yandex.net/i?id=22d9458da3b693f48d1dd98b4e4196f8-5869499-images-thumbs&n=13",
+      "price": 750,
+      "type": "Carpets",
+      "description": "ffkjk kjjkhhgksf. ajiowoiutreh  nmbsihfiudhg9puer mhasiufhseiu ",
+      "id": 5
+    },
+    {
+      "title": "vodka kyrgyz aragy",
+      "image": "https://avatars.mds.yandex.net/i?id=8ff1c26461276fd0f827c6fbb5786323-4077540-images-thumbs&n=13",
+      "price": 12,
+      "type": "Alcohol",
+      "description": "afsdggg gfvdfsa wfsfdda wfdsffda sfsg",
+      "id": 6
+    },
+    {
+      "title": "kumyz (horse milk)",
+      "image": "https://avatars.mds.yandex.net/i?id=17e98387b72736d39b34627e63f648f5-5876942-images-thumbs&n=13",
+      "price": 20,
+      "type": "Alcohol",
+      "description": "fermented natural horse milk",
+      "id": 7
+    },
+    {
+      "title": "kurut",
+      "image": "https://avatars.mds.yandex.net/i?id=e8fe0dc24f3284fe6b0cb2f0f3d7b5d4-5192743-images-thumbs&n=13",
+      "price": 13,
+      "type": "Snacks",
+      "description": "kurut (cream balls) maded from cow milk.",
+      "id": 8
+    },
+    {
+      "title": "chobogo (butter)",
+      "image": "https://avatars.mds.yandex.net/i?id=4d44d744a3c146b16aa1ad5dcd7c5db3-4987768-images-thumbs&n=13",
+      "price": 20,
+      "type": "Snacks",
+      "description": "chobo is kyrgyz national butter for bread",
+      "id": 9
+    },
+    {
+      "title": "boorsok (bread small size)",
+      "image": "https://avatars.mds.yandex.net/i?id=d52d1aeb5cb77503459228bf3d15aca7-4590054-images-thumbs&n=13",
+      "price": 7,
+      "type": "Snacks",
+      "description": "borrlnlvln; mkldjlfodsf. ljljlk;kmlaff kj;lkl;'ask;'lsmfklslfj. lkpo'dfajsiojfiores ",
+      "id": 10
+    },
+    {
+      "title": "kattama",
+      "image": "https://avatars.mds.yandex.net/i?id=7e3b922569599f8067b4c3a2ae07322c-3381135-images-thumbs&n=13",
+      "price": 25,
+      "type": "Snacks",
+      "description": "mdksflkg  kllkn;kj;  loijkadsonifd nlinkll;knsda;klbfjiabi kjvoisadhfjhsiufbu9 ",
+      "id": 11
+    },
+    {
+      "title": "Chuchuk (horse meat)",
+      "image": "https://avatars.mds.yandex.net/i?id=264889f79fd7cfc21b43466d0c7c3f7b-5876357-images-thumbs&n=13",
+      "price": 30,
+      "type": "Snacks",
+      "description": "kjkljds hhhfdsjbfds kjhhbkldsjbfkjldsb hiluhdslbfisdb hiludsflsdjlbljbslgj ",
+      "id": 12
+    },
+    {
+      "title": "byzhy (sheep meet mixed with rice)",
+      "image": "https://tatneft-urs.ru/wp-content/uploads/2020/04/22-scaled.jpg",
+      "price": 24,
+      "type": "Snacks",
+      "description": "jsdhfjghjk jkbadsiyfvdfhsukhfo;psdkp[as hgfuygfuksjdhjbajhl ",
+      "id": 13
+    },
+    {
+      "title": "mug",
+      "image": "https://avatars.mds.yandex.net/i?id=2a00000179e7df6eadfbc5f917692453ce4c-4948104-images-thumbs&n=13",
+      "price": 4,
+      "type": "Souvenirs",
+      "description": "njnjsda ijhoihoashdfh jhohsdhio oijhodsfhu",
+      "id": 14
+    },
+    {
+      "title": "pen ",
+      "image": "https://avatars.mds.yandex.net/i?id=658e8d0b7a7f749080cdfc476df6296e-4076521-images-thumbs&n=13",
+      "price": 25,
+      "type": "Souvenirs",
+      "description": "sdaf afsdf asdasfsdb cdsfvdsfg sdvdfsg ",
+      "id": 15
+    },
+    {
+      "title": "plate with national arnaments",
+      "image": "https://avatars.mds.yandex.net/i?id=3fcdfdd6b7087fe7dd75f6444a2a8158-4231455-images-thumbs&n=13",
+      "price": 30,
+      "type": "Souvenirs",
+      "description": "dasfsd adsfsd asdfsdg afsdf sdfsdggasdg dagfgsdafa ",
+      "id": 16
+    },
+    {
+      "title": "hat for mens",
+      "image": "https://avatars.mds.yandex.net/i?id=fc8dd8c70bbda3d5380a21df27546b04-5695644-images-thumbs&n=13",
+      "price": 18,
+      "type": "Souvenirs",
+      "description": "jkhdksfhkjsjdf khjdfhs uhadu;hfo;ds houdhofuhbas ",
+      "id": 17
+    },
+    {
+      "title": "pictures on gow woil",
+      "image": "https://avatars.mds.yandex.net/i?id=2a556c235eb5e905589dc5aee0a57bc0-5344946-images-thumbs&n=13",
+      "price": 39,
+      "type": "Souvenirs",
+      "description": "nsdfdsjkb uhiuhsdfub huhdfouhsod iua;ohgipfjsd;df ",
+      "id": 18
+    },
+    {
+      "title": "shoes for home ",
+      "image": "https://st-0.akipress.org/st_gallery/72/684672.4c922a2661e43a983f24230bdc05cd93.jpg",
+      "price": 35,
+      "type": "Souvenirs",
+      "description": "bfsdhbihdsfh kuiugiuhohsd oihoihifndasb opuijdkasfoh oiuyp[ihwaslh oiyoihonjhgi. iofyioehsdjkrhwqeia oiyohodgb ",
+      "id": 19
+    },
+    {
+      "title": "t-shirt",
+      "image": "https://avatars.mds.yandex.net/i?id=963969cbd39b715c364f5460ff1beb4c-4577417-images-thumbs&n=13",
+      "price": 13,
+      "type": "T-shirts",
+      "description": "dhgsdfiy giygiuh iugaugfu iuhiuhofd",
+      "id": 20
+    },
+    {
+      "title": "shirt for woman",
+      "image": "https://avatars.mds.yandex.net/i?id=6eb297ea7e457ba9d0ef7be555b3aa9a-5657629-images-thumbs&n=13",
+      "price": 15,
+      "type": "T-shirts",
+      "description": "dsfd sdfg fgrdtert esgrth ",
+      "id": 21
+    },
+    {
+      "title": "national shirt ",
+      "image": "https://avatars.mds.yandex.net/i?id=333d7d3f34929b1d9b0d92e17088deae-5301392-images-thumbs&n=13",
+      "price": 250,
+      "type": "T-shirts",
+      "description": "adfsdg ldfsgjg jnkfjpj isfdipgjpo ojpifjgpi jpifjgpjp ",
+      "id": 22
+    }
+  ],
+  "comments": [
+    {
+      "username": "",
+      "body": "hello world",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-09T09:39:06.920Z",
+      "id": 1
+    },
+    {
+      "username": "",
+      "body": "Hello world 2",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-09T09:42:14.137Z",
       "id": 2
     },
     {
-      "title": "asadfd",
-      "model": "Средний",
-      "image": "sdfg",
-      "price": null,
-      "type": "Кроссовер",
-      "description": "sdf",
+      "username": "",
+      "body": "hi Бека",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-09T11:01:35.315Z",
+      "id": 3,
+      "item": {
+        "username": "",
+        "body": "hi everyone",
+        "image": "https://neertha.lk/profile/img/pro_pick.png",
+        "time": "2022-03-09T11:01:35.315Z",
+        "id": 3
+      }
+    }
+  ],
+  "books": [
+    {
+      "text": "Kel-Suu",
+      "date": "2022-05-11",
+      "number": "13",
+      "id": 1
+    },
+    {
+      "text": "song-kul",
+      "date": "2022-05-20",
+      "number": "4",
+      "id": 2
+    },
+    {
+      "text": "song-kul",
+      "date": "2022-05-20",
+      "number": "4",
+      "id": 3
+    },
+    {
+      "text": "song-kul",
+      "date": "2022-05-20",
+      "number": "4",
+      "id": 4
+    },
+    {
+      "text": "song-kul",
+      "date": "2022-05-20",
+      "number": "4",
       "id": 5
+    },
+    {
+      "text": "song-kul",
+      "date": "2022-05-20",
+      "number": "4",
+      "id": 6
+    },
+    {
+      "text": "jksdfjnfdsgj",
+      "date": "2022-04-12",
+      "number": "13",
+      "id": 7
     }
   ]
 }
